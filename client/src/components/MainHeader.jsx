@@ -1,5 +1,12 @@
 import React from "react";
-import { AppBar, Toolbar, styled, Box, InputBase } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  styled,
+  Box,
+  InputBase,
+  IconButton,
+} from "@mui/material";
 import {
   Menu,
   Search,
@@ -40,12 +47,14 @@ const OptionsWrapper = styled(Box)({
   gap: 20,
 });
 
-export default function MainHeader() {
+export default function MainHeader({ toggleDrawer }) {
   return (
     <div>
       <StyledAppBar position="static">
         <Toolbar>
-          <Menu color="action" />
+          <IconButton onClick={toggleDrawer}>
+            <Menu color="action" />
+          </IconButton>
           <img
             src={gmailLogo}
             alt="gmail-logo"
