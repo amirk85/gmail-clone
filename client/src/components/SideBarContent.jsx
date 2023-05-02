@@ -1,28 +1,10 @@
 import { CreateOutlined } from "@mui/icons-material";
-import { Box, Button, styled, List, ListItem } from "@mui/material";
+import { List, ListItem } from "@mui/material";
 import React, { Fragment, useState } from "react";
 import { SIDEBAR_DATA } from "../config/sidebar.config";
 import ComposeMail from "./ComposeMail";
 import { createPortal } from "react-dom";
-
-const ComposeBtn = styled(Button)({
-  background: "#c2e7ff",
-  color: "#001d35",
-  padding: 15,
-  borderRadius: "1rem",
-  textTransform: "none",
-  minWidth: 140,
-});
-
-const Container = styled(Box)({
-  padding: "0.5rem",
-  "& > ul": {
-    padding: "10px 0 0 5px",
-    fintSize: 14,
-    fontWeight: "500",
-    cursor: "pointer",
-  },
-});
+import { Container, ComposeBtn } from "../custom-styles/sidebar-content";
 
 export default function SideBarContent() {
   const [openDialog, setOpenDialog] = useState(false);
@@ -34,7 +16,7 @@ export default function SideBarContent() {
   return (
     <Container>
       <ComposeBtn onClick={onComposeBtnClick}>
-        <CreateOutlined /> Compose
+        <CreateOutlined /> &nbsp; Compose
       </ComposeBtn>
       <List>
         {SIDEBAR_DATA.map((data) => (

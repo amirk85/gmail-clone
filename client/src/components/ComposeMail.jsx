@@ -1,67 +1,20 @@
 import { Close, DeleteOutline } from "@mui/icons-material";
 import {
-  Box,
-  Button,
   Dialog,
   IconButton,
   InputBase,
   TextField,
   Typography,
-  styled,
 } from "@mui/material";
 import React, { useState } from "react";
-
-const dialogStyles = {
-  maxHeight: "100%",
-  maxWidth: "100%",
-  height: "80%",
-  width: "80%",
-  borderRadius: "10px 10px 0 0",
-};
-
-const Container = styled(Box)({
-  flex: 1,
-  display: "flex",
-  flexDirection: "column",
-});
-
-const Header = styled(Box)({
-  display: "flex",
-  justifyContent: "space-between",
-  padding: "10px 15px",
-  background: "#f2f6fc",
-  "& > p": {
-    fontSize: 14,
-    fontWeight: 500,
-  },
-});
-
-const ContentWrapper = styled(Box)({
-  display: "flex",
-  flexDirection: "column",
-  padding: "0 15px",
-  "& > div": {
-    fontSize: 14,
-    borderBottom: "1px solid #F5F5F5",
-    marginTop: 10,
-  },
-});
-
-const Footer = styled(Box)({
-  display: "flex",
-  justifyContent: "space-between",
-  padding: "10px 15px",
-  marginTop: "auto",
-});
-
-const SendButton = styled(Button)({
-  background: "#0B57D0",
-  color: "#fff",
-  textTransform: "uppercase",
-  fontWeight: 500,
-  borderRadius: 18,
-  width: 100,
-});
+import {
+  dialogStyles,
+  Footer,
+  Header,
+  Container,
+  ContentWrapper,
+  SendButton,
+} from "../custom-styles/compose-mail";
 
 const config = {
   Host: "smtp.elasticemail.com",
@@ -71,7 +24,7 @@ const config = {
 };
 
 export default function ComposeMail({ openDialog, setOpenDialog }) {
-  const [inputData, setInputData] = useState(null);
+  const [inputData, setInputData] = useState({});
 
   function onCloseDialog(e) {
     e.preventDefault();

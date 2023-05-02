@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  AppBar,
-  Toolbar,
-  styled,
-  Box,
-  InputBase,
-  IconButton,
-} from "@mui/material";
+import { Toolbar, InputBase, IconButton } from "@mui/material";
 import {
   Menu,
   Search,
@@ -16,36 +9,12 @@ import {
   AccountCircleOutlined,
   SettingsOutlined,
 } from "@mui/icons-material";
+import {
+  StyledAppBar,
+  SearchWrapper,
+  OptionsWrapper,
+} from "../custom-styles/main-header";
 import { gmailLogo } from "../constants/consts";
-
-const StyledAppBar = styled(AppBar)({
-  background: "#F5F5F5",
-  boxShadow: "none",
-});
-
-const SearchWrapper = styled(Box)({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-between",
-  minWidth: 690,
-  maxWidth: 720,
-  background: "#EAF1FB",
-  padding: "0 10px",
-  borderRadius: "0.5rem",
-  marginLeft: 80,
-  height: 64,
-  "& > div": {
-    width: "100%",
-    padding: 10,
-  },
-});
-
-const OptionsWrapper = styled(Box)({
-  width: "100%",
-  display: "flex",
-  justifyContent: "end",
-  gap: 20,
-});
 
 export default function MainHeader({ toggleDrawer }) {
   return (
